@@ -19,7 +19,7 @@ var addOne = "1234 Rice Rd. \nAnywhere, USA 12345";       //Address variable dec
 var addTwo = "2345 Round St. \nAnywhere, USA 23456";
 var addThree = "3456 Rodeo Ln. \nAnywhere, USA 34567";
 
-var payOne = 12.50;                  //pay rate variable declarations 
+var payOne = 12.50;                    //pay rate variable declarations 
 var payTwo = 13.00;
 var payThree = 12.75;
 
