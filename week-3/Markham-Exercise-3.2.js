@@ -3,8 +3,8 @@
 ;Author: Professor Krasso
 ;Date: 3 March 2020
 ;Modified by: Rochelle Markham
-;Description: Brief example using
-;control structures
+;Description: Brief example of using
+;the switch control structure
 ;=====================================
 */
 
