@@ -23,14 +23,9 @@ try {
   // print the sum
   console.log(sum);
 } catch (err) {
+  //catch the error and print it
   console.log('Catch clause: ' + err)
 } finally {
+  //print that finally clause was reached
   console.log('Finally clause reached...')
 }
-
-/*
-  Expected output:
-  Catch clause: <your custom message goes here>
-  Finally clause reached...
-*/
-
