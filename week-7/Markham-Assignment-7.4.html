@@ -1,0 +1,80 @@
+<!---=================================
+;Title: Assignment 704
+;Author: Professor Krasso
+;Date: 1 April 2020
+;Modified by: Rochelle Markham
+;Description: Inline JS Functions
+;=====================================
+--->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 7.4</title>
+
+    <link rel="stylesheet" href="../site.css">
+    
+    
+    <h1>Computer Components</h1>        
+    <table>
+        <thead>
+            <tr>
+                <!---table row headings. Functions spans two rows to accommodate
+                    EDIT and DELETE functions--->
+                <th>Id</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th colspan='2'>Functions</th>   
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!---first list item--->
+                <td>1</td>
+                <td>Laptop</td>
+                <td>1500.99</td>
+                <!---creates a modal box when the EDIT link is clicked
+                    displaying the id number of the item--->
+                <td><a href = "javascript:alert('1');">EDIT</a></td>
+                <!---creates a modal box when the DELETE link is clicked
+                    displaying 'are you sure?' with options yes and cancel--->
+                <td><a href = "javascript:void(0);" onclick="confirm('Are you sure?');">DELETE</a></td>
+            </tr>
+            <tr>
+                <!---second list item--->
+                <td>2</td>
+                <td>Motherboard</td>
+                <td>35.70</td>
+                <td><a href = "javascript:alert('2');">EDIT</a></td>
+                <td><a href = "javascript:void(0);" onclick="confirm('Are you sure?');">DELETE</a></td>
+            </tr>
+            <tr>
+                <!---third list item--->
+                <td>3</td>
+                <td>Monitor</td>
+                <td>174.99</td>
+                <td><a href = "javascript:alert('3');">EDIT</a></td>
+                <td><a href = "javascript:void(0);" onclick="confirm('Are you sure?');">DELETE</a></td>
+            </tr>
+            <tr>
+                <!---fourth list item--->
+                <td>4</td>
+                <td>Mouse</td>
+                <td>13.99</td>
+                <td><a href = "javascript:alert('4');">EDIT</a></td>
+                <td><a href = "javascript:void(0);" onclick="confirm('Are you sure?');">DELETE</a></td>
+            </tr>
+            <tr>
+                <!---fifth list item--->
+                <td>5</td>
+                <td>Keyboard</td>
+                <td>14.50</td>
+                <td><a href = "javascript:alert('5');">EDIT</a></td>
+                <td><a href = "javascript:void(0);" onclick="confirm('Are you sure?');">DELETE</a></td>
+            </tr>
+        </tbody>    
+    </table>
+    
+</head>
+</html>
