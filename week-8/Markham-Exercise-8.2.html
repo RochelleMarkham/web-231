@@ -1,0 +1,123 @@
+<!---=================================
+;Title: Assignment 704
+;Author: Professor Krasso
+;Date: 1 April 2020
+;Modified by: Rochelle Markham
+;Description: Inline JS Functions
+;=====================================
+--->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 8.2</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+   
+  <style type="text/css">
+       body{
+           font-family: 'Roboto', sans-serif;
+           font-size: 16px;
+        }
+       
+        ul {
+            list-style: none;
+            text-align: center;
+            padding-top: 20px;
+            margin: 0 auto;
+        }
+      
+      h2{
+          font-weight: 400;
+          text-align: center;
+          margin: 0 auto;
+          padding-top: 10px;
+      }
+       
+      /*navigation bar styling*/
+        #topbar{
+            height: 25px;
+            margin: 0px;
+            background-color: turquoise; 
+            padding-bottom: 9px;
+            padding-top: 14px;
+        }
+    
+       /*navigation bar link styling */
+        #topbar a {
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            color: white;
+        }
+       
+        /*Fruits navigation styling*/      
+        #topbar a.active {
+            background-color: teal;
+            color: white;
+            font-weight: 600;
+        }
+  </style>
+</head>
+
+<header>
+    <!---navigation bar & links--->
+    <div id = "topbar">
+        <a href="#Home">Home</a>
+        <a href="#Fruit" class= "active">Fruit</a>
+        <a href="#Vegetables">Vegetables</a>
+        <a href="#Meat">Meat</a>
+        <a href="#Dairy">Dairy</a>
+    </div>
+    
+</header>
+
+<body>
+    <h2>Fruit IDs</h2>
+    
+    <!---unordered list shows here--->
+    <div id="fruits"></div>
+
+   <script>
+        //array defining fruits and their IDs
+        var fruits = [
+            {id: 4041,
+            type: 'apple'},
+
+            {id: 4047,
+            type: 'orange'},
+
+            {id: 4024,
+            type: 'banana'},
+
+            {id: 4011,
+            type: 'pineapple'}]
+        
+        //joins the id and type for each fruit
+        function myFunction(item){
+            var fruitJoin = [item.id,item.type].join(" ");
+            return "id: " + item.id + " type: " + item.type;
+        }
+       
+        //takes the joined items and maps them into a new array
+        var newArray = fruits.map(myFunction);
+
+        //begins the unordered list
+        var list = "<ul>";
+
+        //iterates through the new array adding each item to the unordered list
+        for(var x=0; x<fruits.length; x++){
+            list += "<li>" + newArray[x] + "</li>";
+        }
+        list += "</ul>";    
+
+        //outputs the list to the fruits div defined in the HTML
+        document.getElementById('fruits').innerHTML = list;
+    </script>
+
+</body>
+</html>
