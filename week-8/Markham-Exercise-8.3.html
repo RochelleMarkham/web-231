@@ -1,0 +1,151 @@
+<!---=================================
+;Title: Assignment 704
+;Author: Professor Krasso
+;Date: 8 April 2020
+;Modified by: Rochelle Markham
+;Description: Inline JS Functions
+;=====================================
+--->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Exercise 8.3</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    
+    <style type="text/css">
+        h2{
+            margin-left: 20px;}
+        
+        p{
+            margin-left: 20px}    
+        
+        /*table & border styling*/
+        #table, th, td{
+            margin-left: 20px;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            border-collapse: collapse}
+        
+        /*even row table styling*/
+        tr:nth-child(even) 
+            {background-color: azure}
+        
+        /*odd row table styling*/
+        tr:nth-child(odd) 
+            {background-color: #d7f7f5}
+                
+        td{
+            padding: 5px;}
+        
+        button{
+            margin-left: 20px;
+            margin-bottom: 20px;}
+        
+        body{
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;}
+        
+        /*navigation bar styling*/
+        #topbar{
+            height: 25px;
+            margin: 0px;
+            background-color: turquoise; 
+            padding-bottom: 9px;
+            padding-top: 14px;}
+    
+       /*navigation bar link styling */
+        #topbar a {
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            color: white;}
+       
+        /*Fruits navigation styling*/      
+        #topbar a.active {
+            background-color: teal;
+            color: white;
+            font-weight: 600;}
+    </style>
+
+</head>
+
+<header>
+    <!---navigation bar & links--->
+    <div id = "topbar">
+        <a href="#Home">Home</a>
+        <a href="#Fruit" class= "active">Fruit</a>
+        <a href="#Vegetables">Vegetables</a>
+        <a href="#Meat">Meat</a>
+        <a href="#Dairy">Dairy</a>
+    </div>
+    
+</header> 
+   
+<body>
+    
+    <h2>Lorem Ipsum</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis sem sed sem convallis euismod. Pellentesque vel lectus ac ipsum aliquet feugiat. Vivamus tincidunt tempus nulla nec vestibulum. Curabitur maximus iaculis magna, eu mollis odio imperdiet ut. Phasellus scelerisque, odio at faucibus rutrum, mauris risus blandit diam, in aliquam diam dolor nec purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent ligula diam, consequat quis mattis et, vulputate sed velit. Morbi nec libero porttitor, bibendum odio ac, molestie dui. Aenean vel aliquet dui. Aenean non nisi vel mauris pulvinar aliquam a quis ante. Aenean malesuada suscipit lacinia. Nulla mauris arcu, auctor sed consectetur vitae, fringilla ac ipsum. Vivamus laoreet turpis sit amet lacus sollicitudin, in pellentesque magna egestas.</p>
+
+    <!---button used to make paragraph appear & disappear--->
+    <button id="toggle">Toggle</button>
+    
+    <table id = "table">
+        <tr>
+            <th>ID</th>
+            <th>Fruit</th>
+        </tr>
+        <tr>
+            <!---displays ID number as a link--->
+            <td><a href="#" class="fruitId">4011</a></td>
+            <td>Apple</td>
+        </tr>
+        <tr>
+            <td><a href="#" class="fruitId">4023</a></td>
+            <td>Orange</td>
+        </tr>
+        <tr>
+            <td><a href="#" class="fruitId">4044</a></td>
+            <td>Banana</td>
+        </tr>
+        <tr>
+            <td><a href="#" class="fruitId">4029</a></td>
+            <td>Kiwi</td>
+        </tr>
+        <tr>
+            <td><a href="#" class="fruitId">4032</a></td>
+            <td>Pineapple</td>
+        </tr>
+    </table>
+
+<script>
+    //when button is clicked, the paragraph appears/disappears
+    $("button").click(function(){
+        $("p").toggle();
+    });
+    
+    $(function() {
+        //params: event/click a fruit id link
+        //output: alert modal
+        //description: when fruit id link is clicked in the table, an alert modal
+        //is created showing the fruit id number and type
+        $(".fruitId").click(function(event) {
+            event.preventDefault();
+            var fruitIds = $(this).text();
+            var fruitType = $(this).closest("td").next().text();
+            alert("Fruit ID: " + fruitIds + ", Fruit Type: " + fruitType);
+        });
+    });
+    
+</script>
+
+</body>
+</html>
