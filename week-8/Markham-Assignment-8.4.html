@@ -1,0 +1,82 @@
+<!---=================================
+;Title: Assignment 8.4
+;Author: Professor Krasso
+;Date: 8 April 2020
+;Modified by: Rochelle Markham
+;Description: Putting it all together
+;=====================================
+--->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 8.4</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../site.css">
+
+   <!---hover styling for table row--->
+    <style type="text/css">
+        tr:hover {
+              cursor: pointer;
+              background-color: #ffff99;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!---table will display here--->
+    <div id="emps"></div>
+
+<script type="text/javascript">
+    
+    //params: 4 string fields
+    //output: N/A
+    //description: defines a set of data for employees
+    function employee(id, firstName, lastName, title){
+        this.id=id;        
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.title = title;
+    }
+    
+    //setting data for 5 new employees
+    var employees = [
+        new employee("1", "Allison", "Adams", "General Manager"),
+        new employee("2", "Bob", "Brady", "Assistant Manager"),
+        new employee("3", "Carol", "Carlisle", "Team Leader"),
+        new employee("4", "Dustin", "Dangerfield", "Trainer"),
+        new employee("5", "Erica", "Edwards", "Team Member"),]
+    
+    //builds a table using the information from the employee arrays
+    var out = "<h2>Employees</h2><table><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Title</th></tr>"; 
+    for(var x=0; x< employees.length; x++){
+        out += "<tr><td>" + employees[x].id + "</td>"
+            + "<td>" + employees[x].firstName + "</td>" 
+            + "<td>" + employees[x].lastName + "</td>"
+            + "<td>" + employees[x].title + "</td>"
+            + "</tr>"
+    }
+    out += "</table>"
+    
+    //links the table to the emps div in the html
+    document.getElementById('emps').innerHTML = out;
+    
+  // displays employee information in modal window when clicked
+  $(function () {
+    $("table tr").click(function getEmployee(){
+       //$("tr:first"
+       for(var x=0; x< employees.length; x++){
+           //if ($("tr: first")===employee[x].id){
+           alert("Id: " + employees[x].id + ", First Name: " + employees[x].firstName + ", Last Name: " + employees[x].lastName + ", Title: " + employees[x].title)
+    }})});
+        
+
+   // })
+  //});
+</script>
+</body>
+</html>
